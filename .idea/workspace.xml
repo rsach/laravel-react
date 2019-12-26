@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8075d502-16a7-4382-b0b1-bca4fb288ede" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/frontend/pizzashop/src/components/containers/ProductList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/pizzashop/src/components/containers/cart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/pizzashop/src/components/containers/product.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/pizzashop/src/components/ui/Product.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/pizzashop/src/components/ui/ProductList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/pizzashop/src/components/ui/cart-item.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/pizzashop/src/components/ui/cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pizzashop/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pizzashop/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pizzashop/re.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pizzashop/src/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pizzashop/src/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pizzashop/src/components/containers/AddDayForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pizzashop/src/components/containers/AddDayForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pizzashop/src/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pizzashop/src/components/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pizzashop/src/components/ui/Autocomplete.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pizzashop/src/components/ui/Autocomplete.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pizzashop/src/components/ui/Menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pizzashop/src/components/ui/Menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pizzashop/src/constant.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pizzashop/src/constant.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pizzashop/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pizzashop/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pizzashop/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pizzashop/src/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pizzashop/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pizzashop/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pizzashop/src/store/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pizzashop/src/store/reducers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pizzashop/src/stylesheets/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pizzashop/src/stylesheets/index.scss" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/frontend/pizzashop" />
+  </component>
+  <component name="ProjectId" id="1VIkoItbAzF6adnIUAZG6OtX5Xr" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/frontend/pizzashop/src/components/containers" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/pizzashop/src/components/containers" />
+    </key>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8075d502-16a7-4382-b0b1-bca4fb288ede" name="Default Changelist" comment="" />
+      <created>1576948169474</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1576948169474</updated>
+      <workItem from="1576948171616" duration="5574000" />
+      <workItem from="1576994599614" duration="1946000" />
+      <workItem from="1576997812728" duration="25653000" />
+      <workItem from="1577250431596" duration="38918000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="458" y="213" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1577363365683">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="458" y="213" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1577363365683" />
+    <state x="547" y="334" key="#com.jetbrains.php.refactoring.move.member.instance.PhpMoveInstanceMethodDialog#" timestamp="1577022054378">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="547" y="334" key="#com.jetbrains.php.refactoring.move.member.instance.PhpMoveInstanceMethodDialog#/0.0.1440.900@0.0.1440.900" timestamp="1577022054378" />
+    <state x="507" y="213" key="FileChooserDialogImpl" timestamp="1577037536356">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="507" y="213" key="FileChooserDialogImpl/0.0.1440.900@0.0.1440.900" timestamp="1577037536356" />
+    <state width="500" height="445" key="SwitcherDM" timestamp="1577032271154">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1577032271154" />
+    <state x="374" y="269" key="com.intellij.ide.util.TipDialog" timestamp="1577250434683">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="374" y="269" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1577250434683" />
+    <state x="374" y="270" key="com.intellij.ide.util.TipDialog/0.23.1440.825@0.23.1440.825" timestamp="1576997819663" />
+    <state x="375" y="96" width="689" height="708" key="find.popup" timestamp="1577118523425">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="375" y="96" width="689" height="708" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1577118523425" />
+    <state x="370" y="185" width="700" height="530" key="recent.locations.popup" timestamp="1577032272884">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="370" y="185" width="700" height="530" key="recent.locations.popup/0.0.1440.900@0.0.1440.900" timestamp="1577032272884" />
+    <state x="320" y="117" key="scopes" timestamp="1577037528965">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="320" y="117" key="scopes/0.0.1440.900@0.0.1440.900" timestamp="1577037528965" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1577385479490">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1577385479490" />
+  </component>
+</project>

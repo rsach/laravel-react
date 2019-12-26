@@ -1,0 +1,106 @@
+@import "globals";
+
+html,
+body,
+div#react-container,
+div.app {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-size: 55%;
+}
+
+h1, label {
+  margin: 0
+}
+
+div.app {
+  //background-image: url('http://localhost:3333/rowdy.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+div.whoops-404 {
+  background-color: white;
+  font-size: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-space-between {
+  justify-content: space-between;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.product {
+  padding: 2vh;
+}
+
+.product-list {
+  margin-bottom: 10vh;
+}
+.image {
+    height: 45vh;
+    width: 40vw;
+
+}
+
+.proceed-to-checkout {
+  height: 5vh;
+  margin-right: 2vw;
+  margin-top: 2vh;
+  font-size: 2vh;
+}
+
+.cart-image {
+  height: 20vh;
+  width: 20vw;
+
+}
+
+.product-font {
+  font-size: 3vh;
+  margin-right: .5vh;
+}
+
+.total-margin {
+  margin-left: 3vh;
+}
+.product-price {
+  line-height: 20vh;
+}
+
+.image-container {
+  p {
+    font-size: 3vh;
+  }
+}
+
+
+
+
+@media only screen and (max-width: 500px) {
+  .image {
+    width: 90vw;
+  }
+
+}
