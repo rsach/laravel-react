@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8075d502-16a7-4382-b0b1-bca4fb288ede" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/ab.sh" beforeDir="false" afterPath="$PROJECT_DIR$/backend/ab.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +70,7 @@
       <workItem from="1576994599614" duration="1946000" />
       <workItem from="1576997812728" duration="25653000" />
       <workItem from="1577250431596" duration="40379000" />
-      <workItem from="1577531445314" duration="104237000" />
+      <workItem from="1577531445314" duration="105382000" />
     </task>
     <servers />
   </component>
@@ -104,15 +106,20 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1577032271154" />
+    <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1577908075305">
+      <screen x="0" y="23" width="1440" height="823" />
+    </state>
+    <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1440.900@0.0.1440.900" timestamp="1577908019721" />
+    <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.823@0.23.1440.823" timestamp="1577908075305" />
     <state x="374" y="269" key="com.intellij.ide.util.TipDialog" timestamp="1577531446091">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="374" y="269" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1577531446091" />
     <state x="374" y="270" key="com.intellij.ide.util.TipDialog/0.23.1440.825@0.23.1440.825" timestamp="1576997819663" />
-    <state x="375" y="96" width="689" height="708" key="find.popup" timestamp="1577898273053">
+    <state x="375" y="96" width="689" height="708" key="find.popup" timestamp="1577908150306">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="375" y="96" width="689" height="708" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1577898273053" />
+    <state x="375" y="96" width="689" height="708" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1577908150306" />
     <state x="370" y="185" width="700" height="530" key="recent.locations.popup" timestamp="1577032272884">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

@@ -6,6 +6,6 @@ cd /app/api
 
 composer install --ignore-platform-reqs
 
-php artisan migrate:fresh -y
-php artisan jwt:secret
+php artisan migrate:fresh --force
+php artisan jwt:secret --force
 php artisan serve --host=0.0.0.0
