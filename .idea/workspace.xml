@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8075d502-16a7-4382-b0b1-bca4fb288ede" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/ab.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/default.conf.template" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/nginx.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/ab.sh" beforeDir="false" afterPath="$PROJECT_DIR$/backend/ab.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +70,7 @@
       <workItem from="1576994599614" duration="1946000" />
       <workItem from="1576997812728" duration="25653000" />
       <workItem from="1577250431596" duration="40379000" />
-      <workItem from="1577531445314" duration="103169000" />
+      <workItem from="1577531445314" duration="104058000" />
     </task>
     <servers />
   </component>

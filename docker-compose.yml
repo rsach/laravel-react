@@ -24,7 +24,7 @@ services:
     tty: true
     volumes:
       - ./frontend/paypay:/app
-      - ./frontend/pizzashop/build:/usr/share/nginx/html
+      - ./frontend/pizzashop/build1:/usr/share/nginx/html
     ports:
       - "80:80"
 

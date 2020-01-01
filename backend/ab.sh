@@ -4,8 +4,8 @@
 #curl https://getcomposer.org/composer.phar -o /usr/local/bin/composer
 cd /app/api
 
-composer install
+composer install --ignore-platform-reqs
 
-php artisan migrate:fresh
+php artisan migrate:freshv -y
 php artisan jwt:secret
 php artisan serve --host=0.0.0.0

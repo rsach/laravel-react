@@ -12,7 +12,6 @@ ADD nginx.conf /nginx.conf
 ADD default.conf.template /default.conf.template
 #RUN chmod 755 /nginx.conf
 
-RUN rm -rf /usr/share/nginx/html/*
 #RUN rm /etc/nginx/nginx.conf
 #RUN rm -rf /etc/nginx/sites-enabled
 #RUN mkdir /etc/nginx/sites-enabled
