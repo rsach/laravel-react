@@ -1,24 +1,12 @@
 import C, { url} from './constant'
-
-
-export const addDay = (resort,date , powder=false , backcountry=false) => {
-	return {
-		type: C.ADD_DAY,
-		payload:{
-			resort,date,powder,backcountry
-		}
-	}
-
-}
+import history from "./history";
 
 
 
-export const removeDay = (date) =>{
-	return {
-		type: C.REMOVE_DAY,
-		payload: date
-	}
-};
+
+
+
+
 
 
 export const addToCart = (product) =>{
@@ -60,12 +48,7 @@ export const changeCurrency = (currency) =>{
 
 
 
-export const setGoal = (goal) => {
-	return {
-		type: C.SET_GOAL,
-		payload:goal
-	}
-};
+
 
 
 export const addError = (message) => ({
@@ -80,110 +63,156 @@ export const clearError = index =>
 		});
 
 
-export const changeSuggestions = suggestions => 
-		({
-			type: C.CHANGE_SUGGESTIONS,
-			payload:suggestions
-		});
-
-
-export const clearSuggestions = () => 
-		({
-			type: C.CLEAR_SUGGESTIONS
-		});
-
-
-export const randomGoals = () => (dispatch,getState) => {
-	if(!getState().resortNames.fetching){
-		dispatch({
-			type: C.FETCH_PRODUCTS
-		});
-
-
-		setTimeout(() => {
-			dispatch({
-				type:C.CANCEL_FETCHING
-			})
-		},1500)
-	}
-};
 
 
 
-export const proceedToCheckOut = (cart) => dispatch =>{
+
+export const proceedToCheckOut = ({cart = [], currency = 'dollar'}) => dispatch =>{
 	dispatch({
 		type: C.POST_ORDER
 	});
 
+
 	const data = cart.map(res => ({menu_id: res.id, quantity: res.quantity, price: res.price}));
 	const token = localStorage.getItem('token');
-	fetch(url+'/orders' ,{
-		method: 'POST', // or 'PUT'
-			body: JSON.stringify(data), // data can be `string` or {object}!
+	return fetch(url+'/orders' ,{
+			method: 'POST', // or 'PUT'
+			body: JSON.stringify({data, currency}), // data can be `string` or {object}!
 			headers: {
 			'Content-Type': 'application/json',
+			'Accept': 'application/json',
 			'Authorization': `Bearer ${token}`
 		}
 	})
 		.then( response => response.json())
-		.then(suggestions => {
+		.then(res => {
 			dispatch({
-				type:C.CHANGE_SUGGESTIONS,
-				payload:suggestions
-			})
+				type:C.ORDER_PLACED,
+				payload:res.data.items[0]
+			});
+			dispatch({
+				type: C.EMPTY_CART_AFTER_ORDER_SUCCESS
+			});
+
+			dispatch({
+				type: C.ADD_ORDER_HISTORY,
+				payload: res.data.items[0]
+			});
+
+			history.push('/success');
 		})
 		.catch(error =>{
 			dispatch(
 				addError(error.message)
 			);
 			dispatch({
-				type:C.CANCEL_FETCHING
+				type:C.POST_ORDER_FAIL
 			})
 		})
 };
 
 
-export const suggestResortNames = value => dispatch => {
+
+
+export  const  login =   (value) =>  async (dispatch)  => {
+
 	dispatch({
-		type: C.FETCH_PRODUCTS
+		type: C.LOGIN_REQUEST
 	});
-
-	fetch(url+'/products')
-		.then( response => response.json())
-		.then(suggestions => {
-			dispatch({
-				type:C.CHANGE_SUGGESTIONS,
-				payload:suggestions
-			})
-		})
-		.catch(error =>{
-			dispatch(
-					addError(error.message)
-				);
-			dispatch({
-				type:C.CANCEL_FETCHING
-			})
-		})
-};
-
-export const login = value  => {
-
 	const data = {
-		email: 'rahul.sachdeva@live.com',
-		password: '12345fsfsd'
+		...value
 	};
 
-	fetch(url+`/login?email=${data.email}&password=${data.password}`, {
+	try {
+		const a = await fetch(url+`/login?email=${data.email}&password=${data.password}`, {
+			method: 'POST', // or 'PUT'
+			body: JSON.stringify(data), // data can be `string` or {object}!
+		} );
+		const b = await a.json();
+		console.log(b.success);
+
+		if (!b.success) {
+			throw new Error('Wrong Credentials')
+		}
+
+		localStorage.setItem('token', b.data.access_token);
+		dispatch(
+			fetchProducts('')
+		);
+		dispatch(
+			fetchOrderHistory('')
+		);
+		dispatch({
+			type: C.LOGIN_SUCCESS
+		});
+
+		history.push('/');
+
+
+
+
+	}catch (e) {
+
+		dispatch({
+			type: C.LOGIN_FAILURE
+		});
+
+		dispatch(
+			addError(e.message)
+		);
+	}
+
+
+};
+
+
+
+
+export const register = value => dispatch  => {
+
+	const data = {
+		...value
+	};
+
+	dispatch({
+		type: C.REGISTER_REQUEST
+	});
+
+	return fetch(url+`/register`, {
 		method: 'POST', // or 'PUT'
 		body: JSON.stringify(data), // data can be `string` or {object}!
+		headers: {
+			'Content-Type': 'application/json',
+			'Accept': 'application/json',
+		}
 	} )
 		.then( response => response.json())
 		.then(res => {
+			if (!res.success) {
+
+				const errorMessage = Object.keys(res.data.errors).map(err => res.data.errors[err]).join(',');
+				throw new Error(errorMessage)
+			}
 			localStorage.setItem('token', res.data.access_token);
+			dispatch({
+				type: C.REGISTER_SUCCESS
+			});
+			dispatch({
+				type: C.LOGIN_SUCCESS
+			});
+
+			history.push('/');
 
 		})
 		.catch(error =>{
 
+			dispatch({
+				type: C.REGISTER_FAILURE
+			});
+			error.message.split(',').forEach(err => dispatch(
+				addError(err)
+			)
+			);
 			new Error(error)
 		})
 };
@@ -192,8 +221,15 @@ export const fetchProducts = value => dispatch => {
 	dispatch({
 		type: C.FETCH_PRODUCTS
 	});
+	const token = localStorage.getItem('token');
 
-	fetch(url+'/products')
+	return fetch(url+'/products', {
+		headers: {
+			'Content-Type': 'application/json',
+			'Accept': 'application/json',
+			'Authorization': `Bearer ${token}`
+		}
+	})
 		.then( response => response.json())
 		.then(products => {
 			dispatch({
@@ -205,6 +241,37 @@ export const fetchProducts = value => dispatch => {
 			dispatch(
 					addError(error.message)
 				);
+			dispatch({
+				type:C.CANCEL_FETCHING
+			})
+		})
+};
+
+
+export const fetchOrderHistory = value => dispatch => {
+	dispatch({
+		type: C.FETCH_ORDER_HISTORY
+	});
+	const token = localStorage.getItem('token');
+
+	return fetch(url+'/orders', {
+		headers: {
+			'Content-Type': 'application/json',
+			'Accept': 'application/json',
+			'Authorization': `Bearer ${token}`
+		}
+	})
+		.then( response => response.json())
+		.then(orderHistory => {
+			dispatch({
+				type:C.CHANGE_ORDER_HISTORY,
+				payload:orderHistory.data.items
+			})
+		})
+		.catch(error =>{
+			dispatch(
+				addError(error.message)
+			);
 			dispatch({
 				type:C.CANCEL_FETCHING
 			})

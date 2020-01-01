@@ -14,12 +14,12 @@ class AddForeignKeyToOrderItems extends Migration
     public function up()
     {
         Schema::table('order_items', function (Blueprint $table) {
-
-            $table->unsignedBigInteger('order_id');
-
-            $table->unique(['order_id', 'menu_id']);
-
-            $table->foreign('order_id')->references('id')->on('orders');
+//
+//            $table->unsignedBigInteger('order_id');
+//
+//            $table->unique(['order_id', 'menu_id']);
+//
+//            $table->foreign('order_id')->references('id')->on('orders');
         });
     }
 
@@ -32,9 +32,9 @@ class AddForeignKeyToOrderItems extends Migration
     {
         Schema::table('order_items', function (Blueprint $table) {
 
-            $table->dropForeign(['order_id']);
-            $table->dropUnique(['order_id', 'menu_id']);
-            $table->dropColumn('order_id');
+//            $table->dropForeign(['order_id']);
+//            $table->dropUnique(['order_id', 'menu_id']);
+//            $table->dropColumn('order_id');
         });
     }
 }

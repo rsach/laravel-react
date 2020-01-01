@@ -2,14 +2,16 @@
 
 div.show-errors {
 
+  z-index: 100000;
+  position: absolute;
   width: 100%;
   font-size: 1.5em;
 
   div {
-    position: absolute;
+    //position: absolute;
     width: 100%;
     text-align: center;
-    top: 0;
+    //top: 0;
     background-color: red;
     color: white;
     font-family: verdana, sans-serif;

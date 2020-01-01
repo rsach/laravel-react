@@ -1,18 +1,11 @@
 import C from '../constant'
 import { combineReducers } from 'redux'
 
-export const goal =  (state=10, action) => 
-	(action.type === C.SET_GOAL) ?
-	 parseInt(action.payload) :
-	 state;
 
 
 
 
-export const skiDay =  (state=null, action) => 
-	(action.type === C.ADD_DAY) ?
-	 action.payload :
-	 state;
+
 
 
 export const addToCart =  (state=null, action) =>
@@ -43,25 +36,7 @@ export const errors = (state=[],action) => {
 
 
 
-export const allSkiDays = (state = [], action ) => {
-	switch(action.type){
-		case C.ADD_DAY:
-			const hasDay = state.some(skiDay => skiDay.date === action.payload.date);
-			return (hasDay) ?
-					state   :
-					 [
-						...state,
-						skiDay(null,action) 
-					];
 
-		case C.REMOVE_DAY: 
-			return state.filter( skiDay => skiDay.date !== action.payload);
-
-		default:
-			return state
-	}
-
-};
 
 
 export const fetching = (state=false,action ) =>{
@@ -90,20 +65,6 @@ export const currency = (state='dollar',action ) =>{
 };
 
 
-export const suggestions = (state=[] , action) => {
-
-	switch(action.type){
-		case C.CLEAR_SUGGESTIONS:
-			return [];
-		case C.CHANGE_SUGGESTIONS:
-			return action.payload;
-
-		default:
-			return state
-	}
-
-};
-
 
 
 export const products = (state=[] , action) => {
@@ -120,19 +81,31 @@ export const products = (state=[] , action) => {
 
 };
 
-export const allProducts = (state = [], action ) => {
-	switch(action.type){
-		case C.ADD_DAY:
-			const hasDay = state.some(skiDay => skiDay.date === action.payload.date);
-			return (hasDay) ?
-				state   :
-				[
-					...state,
-					skiDay(null,action)
-				];
+export const orderHistory = (state=[] , action) => {
 
-		case C.REMOVE_DAY:
-			return state.filter( skiDay => skiDay.date !== action.payload);
+	switch(action.type){
+		case C.CLEAR_ORDER_HISTORY:
+			return [];
+		case C.CHANGE_ORDER_HISTORY:
+			return action.payload;
+		case C.ADD_ORDER_HISTORY:
+			return [ ...state, action.payload];
+
+		default:
+			return state
+	}
+
+};
+
+
+export const isAuthenticated = (state=false,action ) =>{
+
+	switch(action.type){
+		case C.LOGIN_SUCCESS:
+			return true;
+		case C.LOGIN_FAILURE:
+		case C.LOGOUT:
+			return false;
 
 		default:
 			return state
@@ -145,10 +118,7 @@ export const allProducts = (state = [], action ) => {
 export const cart = (state = [], action ) => {
 	switch(action.type){
 		case C.ADD_TO_CART:
-			const hasProduct = state.some(product => product.id === action.payload.id);
-			return (hasProduct) ?
-				state   :
-				[
+			return [
 					...state,
 					addToCart(null,action)
 				];
@@ -156,6 +126,8 @@ export const cart = (state = [], action ) => {
 		case C.REMOVE_FROM_CART:
 			return state.filter( product => product.id !== action.payload.id);
 
+		case C.EMPTY_CART_AFTER_ORDER_SUCCESS:
+			return [];
 		case C.DECREASE_QUANTITY_OF_PRODUCT_FROM_CART:
 		case C.INCREASE_QUANTITY_OF_PRODUCT_FROM_CART:
 			const product = state.filter(product => product.id === action.payload.id)[0];
@@ -182,18 +154,13 @@ export const cart = (state = [], action ) => {
 
 
 export default combineReducers({
-	allSkiDays,
-	allProducts,
-	goal,
 	errors,
-	resortNames: combineReducers({
-		fetching,
-		suggestions
-	}),
 	products: combineReducers({
 		fetching,
 		products
 	}),
 	cart,
-	currency
+	currency,
+	orderHistory,
+	isAuthenticated
 })

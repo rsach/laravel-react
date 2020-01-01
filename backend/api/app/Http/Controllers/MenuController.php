@@ -8,23 +8,25 @@ use MarcinOrlowski\ResponseBuilder\ResponseBuilder;
 
 class MenuController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('jwt.verify');
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-    }
+//    public function index()
+//    {
+//        //
+//    }
 
     public function get() {
         $menu = Menu::all();
 
-        if (!$menu) {
 
 
-        }
         return ResponseBuilder::success($menu);
     }
 
@@ -50,10 +52,10 @@ class MenuController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
+//    public function store(Request $request)
+//    {
+//        //
+//    }
 
     /**
      * Display the specified resource.
@@ -61,10 +63,10 @@ class MenuController extends Controller
      * @param  \App\Menu  $menu
      * @return \Illuminate\Http\Response
      */
-    public function show(Menu $menu)
-    {
-        //
-    }
+//    public function show(Menu $menu)
+//    {
+//        //
+//    }
 
     /**
      * Show the form for editing the specified resource.
@@ -77,6 +79,8 @@ class MenuController extends Controller
         $validatedAttributes =
 
         $product->update($this->validateProduct());
+        return ResponseBuilder::success($product);
+
         //
     }
 
@@ -87,10 +91,10 @@ class MenuController extends Controller
      * @param  \App\Menu  $menu
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Menu $menu)
-    {
-        //
-    }
+//    public function update(Request $request, Menu $menu)
+//    {
+//        //
+//    }
 
     /**
      * Remove the specified resource from storage.
@@ -98,10 +102,10 @@ class MenuController extends Controller
      * @param  \App\Menu  $menu
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Menu $menu)
-    {
-        //
-    }
+//    public function destroy(Menu $menu)
+//    {
+//        //
+//    }
 
     public function validateProduct() {
         return  request()->validate([

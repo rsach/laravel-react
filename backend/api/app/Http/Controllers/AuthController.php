@@ -11,6 +11,10 @@ use MarcinOrlowski\ResponseBuilder\ResponseBuilder;
 
 class AuthController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('jwt.verify')->only(['getAuthUser', 'logout']);
+    }
     public $loginAfterSignUp = true;
 
     protected function validator(array $data)
@@ -40,7 +44,7 @@ class AuthController extends Controller
             'password' => bcrypt($request->password),
         ]);
 
-        $token = $user;
+        $token = auth('api')->login($user);
 
 
         return $this->respondWithToken($token);

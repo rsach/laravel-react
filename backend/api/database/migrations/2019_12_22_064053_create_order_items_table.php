@@ -23,6 +23,12 @@ class CreateOrderItemsTable extends Migration
 
 
             $table->foreign('menu_id')->references('id')->on('menus')->onDelete('cascade');
+
+            $table->unsignedBigInteger('order_id');
+
+            $table->unique(['order_id', 'menu_id']);
+
+            $table->foreign('order_id')->references('id')->on('orders');
         });
 
 
@@ -36,7 +42,8 @@ class CreateOrderItemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('order_items');
+
+        DB::table('order_items')->delete();
 
 
     }

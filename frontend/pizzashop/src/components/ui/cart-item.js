@@ -11,14 +11,13 @@ const CartItem = ({ item = {}, currency = ''}) => {
 
 
 
-    console.log(currency)
 
 
     return (
         <div className="flex flex-space-between">
             <div className="image-container">
-                <img alt={item.name} className="cart-image" src={item.picture} />
-                <p className="product-font">{item.name}</p>
+                <img id="image" alt={(item || {}).name} className="cart-image" src={(item || {}).picture} />
+                <p  id="name" className="product-font">{(item || {}).name}</p>
 
 
             </div>
@@ -26,12 +25,12 @@ const CartItem = ({ item = {}, currency = ''}) => {
 
                 <div className="product-price">
                     <div className="flex">
-                        <p className="product-font">{item.quantity} pc</p>
+                        <p id="quantity" className="product-font">{(item || {}).quantity} pc</p>
                         <p className="product-font">x</p>
 
 
-                        <p className="product-font">{currency === 'dollar' ? '$' : '€'} {item.price}</p>
-                        <p className="product-font total-margin"> : {currency === 'dollar' ? '$' : '€'} {item.quantity*item.price}</p>
+                        <p id="price" className="product-font">{currency === 'dollar' ? '$' : '€'} {(item || {}).price}</p>
+                        <p id="total" className="product-font total-margin"> : {currency === 'dollar' ? '$' : '€'} {(item || {}).quantity*(item || {}).price}</p>
 
                     </div>
 

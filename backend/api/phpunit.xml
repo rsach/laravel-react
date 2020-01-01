@@ -19,9 +19,23 @@
             <directory suffix="Test.php">./tests/Feature</directory>
         </testsuite>
     </testsuites>
+
+    <logging>
+        <log type="coverage-html" target="./tests/codeCoverage"  />
+    </logging>
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">./app</directory>
+            <exclude>
+                <directory suffix=".php">./app/Http/Controllers/Auth</directory>
+                <directory suffix=".php">./app/Http/Middleware</directory>
+                <directory suffix=".php">./app/Http/Requests</directory>
+                <directory suffix=".php">./app/Exceptions</directory>
+                <directory suffix=".php">./app/Console</directory>
+                <directory suffix=".php">./app/Providers</directory>
+
+
+            </exclude>
         </whitelist>
     </filter>
     <php>
@@ -34,4 +48,5 @@
         <server name="QUEUE_CONNECTION" value="sync"/>
         <server name="SESSION_DRIVER" value="array"/>
     </php>
+
 </phpunit>

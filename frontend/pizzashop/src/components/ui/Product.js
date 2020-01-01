@@ -10,29 +10,30 @@ const Product = ({product,onAddToCart=f=>f,removeFromCart=f=>f,increaseQuantity=
 
 
     const cartData = cart.filter(res => res.id === product.id);
-    console.log(cartData);
+
 
 
 
     return (
         <div className="product">
             <div className="image-container">
-                <img alt={product.name} className="image" src={product.picture} />
-                <p>{product.price}</p>
+                <img id="image" alt={(product || {}).name} className="image" src={(product || {}).picture} />
+                <p id="price">{(product || {}).price}</p>
 
             </div>
             <div className="flex flex-space-between">
-                <p>{product.name}</p>
+                <p id="name">{(product || {}).name}</p>
                 {
-                    cartData.length > 0 ? (
-                        <div>
 
-                            <input disabled value={cartData[0].quantity}/>
-                            <button onClick={() => increaseQuantity(cartData[0])}>+</button>
+                    (cartData || []).length > 0 ?
+                        (<div id="added">
+
+                            <input id="quantity" disabled value={cartData[0].quantity}/>
+                            <button id="increase" onClick={() => increaseQuantity(cartData[0])}>+</button>
                             {
                                 cartData[0].quantity> 1 ?
-                                    (<button onClick={() => decreaseQuantity(cartData[0])}>-</button>):
-                                    (<button onClick={() => removeFromCart(product)}>-</button>)
+                                    (<button id="decrease" onClick={() => decreaseQuantity(cartData[0])}>-</button>):
+                                    (<button id="removeFromCart" onClick={() => removeFromCart(product)}>-</button>)
                             }
 
 
@@ -41,7 +42,7 @@ const Product = ({product,onAddToCart=f=>f,removeFromCart=f=>f,increaseQuantity=
                         )
 
                      : (
-                         <button onClick={() => onAddToCart(product)}>ADD TO CART</button>
+                         <button id="addToCart" onClick={() => onAddToCart(product)}>ADD TO CART</button>
                     )}
             </div>
 
@@ -59,7 +60,8 @@ Product.propTypes = {
 
     product: (props) => (!(typeof props.product === 'object')) ?
         new Error('Product must be an object') :
-        null
+        null,
+
 
 };
 

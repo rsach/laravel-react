@@ -16,7 +16,13 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
 
+            $table->unsignedBigInteger('user_id');
+            $table->string('currency');
 
+
+//            $table->unique([ 'user_id']);
+
+            $table->foreign('user_id')->references('id')->on('users');
 
             $table->timestamps();
 
@@ -30,9 +36,12 @@ class CreateOrdersTable extends Migration
      */
     public function down()
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
-        Schema::dropIfExists('orders');
-        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+//        $table->dropForeign([ 'user_id']);
+////            $table->dropUnique([ 'user_id']);
+//        $table->dropColumn([ 'user_id']);
+//        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        DB::table('orders')->delete();
+//        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 
     }
 }

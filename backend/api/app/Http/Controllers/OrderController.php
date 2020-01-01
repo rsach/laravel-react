@@ -7,20 +7,26 @@ use App\Order_items;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use MarcinOrlowski\ResponseBuilder\ResponseBuilder;
+use Mockery\Exception;
+use Tymon\JWTAuth\Exceptions\JWTException;
 
 class OrderController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('jwt.verify');
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-
-
-        //
-    }
+//    public function index()
+//    {
+//
+//
+//        //
+//    }
 
     /**
      * Display a listing of the resource.
@@ -42,12 +48,12 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-
-
-        //
-    }
+//    public function create()
+//    {
+//
+//
+//        //
+//    }
 
     /**
      * Store a newly created resource in storage.
@@ -57,9 +63,12 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
+
         $user = auth('api')->user();
 
-        $order_items = $request->all();
+
+
+        $order_items = $request->get('data');
         $validate = Validator::make($order_items, [
             '*.menu_id' => 'exists:menus,id',
             '*.quantity' => 'required',
@@ -79,6 +88,7 @@ class OrderController extends Controller
 
 
         $order = new Order();
+        $order->currency = $request->get('currency');
 
         $order->user()->associate($user);
         $order->save();
@@ -93,6 +103,9 @@ class OrderController extends Controller
         $order->save();
 
 
+        $created_order = Order::with('order_items.menu')->where('id','=' , $order->id)->get();
+
+
 
 
 
@@ -102,7 +115,7 @@ class OrderController extends Controller
 
 //        $order->order_items()->attach($created_order_items);
 
-        return ResponseBuilder::success($order);
+        return ResponseBuilder::success($created_order);
         //
     }
 
@@ -112,10 +125,10 @@ class OrderController extends Controller
      * @param  \App\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function show(Order $order)
-    {
-        //
-    }
+//    public function show(Order $order)
+//    {
+//        //
+//    }
 
     /**
      * Show the form for editing the specified resource.
@@ -123,10 +136,10 @@ class OrderController extends Controller
      * @param  \App\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function edit(Order $order)
-    {
-        //
-    }
+//    public function edit(Order $order)
+//    {
+//        //
+//    }
 
     /**
      * Update the specified resource in storage.
@@ -135,10 +148,10 @@ class OrderController extends Controller
      * @param  \App\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Order $order)
-    {
-        //
-    }
+//    public function update(Request $request, Order $order)
+//    {
+//        //
+//    }
 
     /**
      * Remove the specified resource from storage.
@@ -146,8 +159,8 @@ class OrderController extends Controller
      * @param  \App\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Order $order)
-    {
-        //
-    }
+//    public function destroy(Order $order)
+//    {
+//        //
+//    }
 }

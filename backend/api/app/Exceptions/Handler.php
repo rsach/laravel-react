@@ -5,6 +5,7 @@ namespace App\Exceptions;
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use MarcinOrlowski\ResponseBuilder\ResponseBuilder;
+use Tymon\JWTAuth\Exceptions\TokenInvalidException;
 
 class Handler extends ExceptionHandler
 {
@@ -47,13 +48,20 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        if ($exception instanceof ModelNotFoundException &&
-            $request->wantsJson())
-        {
-            return ResponseBuilder::error(404, null, [
-                'data' => 'Resource not found'
-            ], 404);
+        if ($request->wantsJson() || $request->expectsJson()) {
+
+            if ($exception instanceof ModelNotFoundException)
+            {
+                return ResponseBuilder::error(404, null, [
+                    'data' => 'Resource not found'
+                ], 404);
+            } else if ($exception instanceof  TokenInvalidException) {
+                return ResponseBuilder::error(401, null, [
+                    'data' => 'Token expired'
+                ], 401);
+            }
         }
+
         return parent::render($request, $exception);
     }
 

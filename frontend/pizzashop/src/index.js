@@ -5,7 +5,9 @@ import routes from './routes'
 import sampleData from './initialState'
 import storeFactory from './store'
 import { Provider } from 'react-redux'
-import {addError, login} from './actions'
+import {addError, fetchOrderHistory, fetchProducts} from './actions'
+import C from "./constant";
+
 
 // import initialState from './initialState.json'
 
@@ -23,11 +25,27 @@ const handleError = error => {
 	store.dispatch(
 			addError(error.message)
 		)
-}
+};
 
 
 const store = storeFactory(initialState);
 store.subscribe(saveState);
+
+if (localStorage.getItem('token')) {
+	store.dispatch(
+		fetchOrderHistory('')
+	)
+
+	store.dispatch(
+		fetchProducts('')
+	)
+	store.dispatch(
+		{
+			type: C.LOGIN_SUCCESS,
+
+		}
+	)
+}
 
 window.React = React;
 window.store = store;
@@ -41,4 +59,4 @@ render(
 	document.getElementById('root')
 );
 
-login();
+

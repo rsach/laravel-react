@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import HomeIcon from 'react-icons/lib/fa/home'
 
-import {FaShoppingCart} from 'react-icons/lib/fa'
+import {FaShoppingCart, FaArchive} from 'react-icons/lib/fa'
 import React from 'react'
 
 import '../../stylesheets/Menu.scss'
@@ -15,10 +15,14 @@ const Menu = () =>
 				<FaShoppingCart />
 
 			</Link>
+			<Link  to="/pastOrders">
+				<FaArchive />
+
+			</Link>
 
 
 
 
-		</nav>
+		</nav>;
 
 export default Menu

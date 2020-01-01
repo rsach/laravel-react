@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PrivateRoute/> spec renders the component 1`] = `undefined`;
+
+exports[`<PrivateRoute/> spec renders the component 2`] = `undefined`;

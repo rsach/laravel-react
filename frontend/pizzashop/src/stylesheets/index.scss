@@ -51,12 +51,26 @@ div.whoops-404 {
   justify-content: flex-end;
 }
 
+.flex-center {
+  justify-content: center;
+}
 .product {
   padding: 2vh;
 }
 
+.form {
+  height: 80vh;
+  TextField {
+    margin-bottom: 3vh;
+  }
+  .button-margin {
+    margin-top: 3vh;
+  }
+}
+
 .product-list {
   margin-bottom: 10vh;
+  margin-top: 10vh;
 }
 .image {
     height: 45vh;
@@ -77,6 +91,18 @@ div.whoops-404 {
 
 }
 
+.success-container {
+  height: 80vh;
+}
+
+.display-3 {
+  font-size: 5vh;
+}
+.fixed {
+  position: fixed !important;
+  top: 0;
+}
+
 .product-font {
   font-size: 3vh;
   margin-right: .5vh;
@@ -93,6 +119,10 @@ div.whoops-404 {
   p {
     font-size: 3vh;
   }
+}
+
+.past-order-container {
+  width: 100%;
 }
 
 
