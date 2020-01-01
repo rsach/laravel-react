@@ -197,6 +197,13 @@ export const register = value => dispatch  => {
 			dispatch({
 				type: C.REGISTER_SUCCESS
 			});
+
+			dispatch(
+				fetchProducts('')
+			);
+			dispatch(
+				fetchOrderHistory('')
+			);
 			dispatch({
 				type: C.LOGIN_SUCCESS
 			});

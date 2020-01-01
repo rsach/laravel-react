@@ -2,32 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8075d502-16a7-4382-b0b1-bca4fb288ede" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/api/tests/Unit/MenuSchemaTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/api/tests/Unit/MiddlewareTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/ab.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/default.conf.template" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/nginx.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/app/Exceptions/Handler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/app/Http/Controllers/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/app/Http/Controllers/MenuController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/app/Http/Controllers/MenuController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/app/Http/Controllers/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/app/Http/Controllers/OrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/app/Http/Middleware/Authenticate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/app/Http/Middleware/JwtMiddleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/app/Http/Middleware/JwtMiddleware.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/app/Menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/app/Menu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/app/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/app/Order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/app/Order_items.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/app/Order_items.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/database/migrations/2019_12_22_055312_create_orders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/database/migrations/2019_12_22_055312_create_orders_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/database/migrations/2019_12_22_064053_create_order_items_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/database/migrations/2019_12_22_064053_create_order_items_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/database/migrations/2019_12_26_125953_add_foreign_key_to_order.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/database/migrations/2019_12_26_125953_add_foreign_key_to_order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/database/migrations/2019_12_26_134638_add_foreign_key_to_order_items.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/database/migrations/2019_12_26_134638_add_foreign_key_to_order_items.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/database/seeds/OrderItemsSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/database/seeds/OrderItemsSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/database/seeds/OrderSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/database/seeds/OrderSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/phpunit.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/tests/Unit/MenuTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/tests/Unit/MenuTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/tests/Unit/OrderTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/tests/Unit/OrderTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/tests/Unit/UserTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/tests/Unit/UserTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/ab.sh" beforeDir="false" afterPath="$PROJECT_DIR$/backend/ab.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +33,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/frontend/pizzashop/src/test/containers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/frontend" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
@@ -62,6 +44,7 @@
       <recent name="$PROJECT_DIR$/frontend/pizzashop/src/test/ui" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend" />
       <recent name="$PROJECT_DIR$/frontend/pizzashop/src/test/containers" />
       <recent name="$PROJECT_DIR$/frontend/pizzashop/src/components/containers" />
     </key>
@@ -92,7 +75,7 @@
       <workItem from="1576994599614" duration="1946000" />
       <workItem from="1576997812728" duration="25653000" />
       <workItem from="1577250431596" duration="40379000" />
-      <workItem from="1577531445314" duration="99650000" />
+      <workItem from="1577531445314" duration="103169000" />
     </task>
     <servers />
   </component>
@@ -104,10 +87,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="184" y="113" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1577895899350" />
-    <state x="458" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1577898318598">
+    <state x="458" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1577902867720">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="458" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1577898318598" />
+    <state x="458" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1577902867720" />
     <state x="458" y="213" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1577893808688">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

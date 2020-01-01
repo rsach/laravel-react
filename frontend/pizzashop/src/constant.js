@@ -54,5 +54,5 @@ const constants = {
 
 };
 
-export const url = 'http://localhost:8000/api';
+export const url = `http://${window.location.hostname}/api`;
 export default constants

@@ -7,7 +7,7 @@ import {
     increaseQuantity, login, proceedToCheckOut, register,
     removeFromCart
 } from "../actions";
-import C from '../constant';
+import C, {url} from '../constant';
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 
@@ -89,7 +89,7 @@ describe('actions', () => {
     });
 
     it('creates CHANGE_PRODUCTS  ', () => {
-        fetchMock.getOnce('http://localhost:8000/api/products', {
+        fetchMock.getOnce(`${url}/products`, {
             body: {  data: { items: ['do something'] } },
             headers: { 'Content-Type': 'application/json' }
         });
@@ -105,7 +105,7 @@ describe('actions', () => {
     });
 
     it('creates CANCEL_FETCHING  ', () => {
-        fetchMock.getOnce('http://localhost:8000/api/products', {
+        fetchMock.getOnce(`${url}/products`, {
             body: { data: { items: ['do something']  }},
             headers: { 'Content-Type': 'application/json' },
             throws: new Error('Some No Good Error')
@@ -126,7 +126,7 @@ describe('actions', () => {
 
 
     it('creates CHANGE_ORDER_HISTORY  ', () => {
-        fetchMock.getOnce('http://localhost:8000/api/orders', {
+        fetchMock.getOnce(`${url}/orders`, {
             body: {  data: { items: ['do something'] } },
             headers: { 'Content-Type': 'application/json' }
         });
@@ -142,7 +142,7 @@ describe('actions', () => {
     });
 
     it('creates FETCH_ORDER_HISTORY  ', () => {
-        fetchMock.getOnce('http://localhost:8000/api/orders', {
+        fetchMock.getOnce(`${url}/orders`, {
             body: { data: { items: ['do something']  }},
             headers: { 'Content-Type': 'application/json' },
             throws: new Error('Some No Good Error')
@@ -163,7 +163,7 @@ describe('actions', () => {
 
 
     it('creates POST_ORDER  ', () => {
-        fetchMock.postOnce('http://localhost:8000/api/orders', {
+        fetchMock.postOnce(`${url}/orders`, {
             body: { data: {items: [ {data: [], currency: 'dollar'}] } },
             headers: { 'Content-Type': 'application/json' }
         });
@@ -182,7 +182,7 @@ describe('actions', () => {
     });
 
     it('creates POST_ORDER_FAIL ', () => {
-        fetchMock.postOnce('http://localhost:8000/api/orders', {
+        fetchMock.postOnce(`${url}/orders`, {
             body: { data: [], currency: 'dollar' },
 
             throws: new Error('Some No Good Error')
@@ -202,7 +202,7 @@ describe('actions', () => {
 
 
     it('creates error POST_ORDER_FAIL ', () => {
-        fetchMock.postOnce('http://localhost:8000/api/orders', {
+        fetchMock.postOnce(`${url}/orders`, {
             body: { data: [], currency: 'dollar' },
 
             throws: new Error('Some No Good Error')
@@ -221,7 +221,7 @@ describe('actions', () => {
     });
 
     it('creates LOGIN_SUCCESS ', () => {
-        fetchMock.postOnce('http://localhost:8000/api/login', {
+        fetchMock.postOnce(`${url}/login`, {
             body: { data: {access_token: 'dsf'}, success: true },
             headers: { 'Content-Type': 'application/json' }
         }, {
@@ -232,11 +232,11 @@ describe('actions', () => {
         });
 
 
-        fetchMock.getOnce('http://localhost:8000/api/orders', {
+        fetchMock.getOnce(`${url}/orders`, {
             body: { data: {items : ['do something']} },
             headers: { 'Content-Type': 'application/json' }
         });
-        fetchMock.getOnce('http://localhost:8000/api/products', {
+        fetchMock.getOnce(`${url}/products`, {
             body: {data: { items: ['do something']   }},
             headers: { 'Content-Type': 'application/json' }
         });
@@ -260,7 +260,7 @@ describe('actions', () => {
 
 
     it('creates LOGIN_FAILURE ', () => {
-        fetchMock.postOnce('http://localhost:8000/api/login', {
+        fetchMock.postOnce(`${url}/login`, {
             body: { data: {access_token: 'dsf'}, success: false },
             headers: { 'Content-Type': 'application/json' }
         }, {
@@ -271,11 +271,11 @@ describe('actions', () => {
         });
 
 
-        fetchMock.getOnce('http://localhost:8000/api/orders', {
+        fetchMock.getOnce(`${url}/orders`, {
             body: { data: {items : ['do something']} },
             headers: { 'Content-Type': 'application/json' }
         });
-        fetchMock.getOnce('http://localhost:8000/api/products', {
+        fetchMock.getOnce(`${url}/products`, {
             body: {data: { items: ['do something']   }},
             headers: { 'Content-Type': 'application/json' }
         });
@@ -299,17 +299,17 @@ describe('actions', () => {
 
 
     it('creates REGISTER_SUCCESS ', () => {
-        fetchMock.postOnce('http://localhost:8000/api/register', {
+        fetchMock.postOnce(`${url}/register`, {
             body: { data: {access_token: 'dsf'}, success: true },
             headers: { 'Content-Type': 'application/json' }
         });
 
 
-        fetchMock.getOnce('http://localhost:8000/api/orders', {
+        fetchMock.getOnce(`${url}/orders`, {
             body: { data: {items : ['do something']} },
             headers: { 'Content-Type': 'application/json' }
         });
-        fetchMock.getOnce('http://localhost:8000/api/products', {
+        fetchMock.getOnce(`${url}/products`, {
             body: {data: { items: ['do something']   }},
             headers: { 'Content-Type': 'application/json' }
         });
@@ -322,6 +322,10 @@ describe('actions', () => {
 
 
             { type: C.REGISTER_SUCCESS },
+            { type: C.FETCH_PRODUCTS },
+            { type: C.FETCH_ORDER_HISTORY },
+
+
             { type: C.LOGIN_SUCCESS },
 
 
@@ -335,17 +339,17 @@ describe('actions', () => {
 
 
     it('creates REGISTER_FAILURE ', () => {
-        fetchMock.postOnce('http://localhost:8000/api/register', {
+        fetchMock.postOnce(`${url}/register`, {
             body: { data: {errors: {a: 'Wrong Data'}}, success: false },
             headers: { 'Content-Type': 'application/json' }
         });
 
 
-        fetchMock.getOnce('http://localhost:8000/api/orders', {
+        fetchMock.getOnce(`${url}/orders`, {
             body: { data: {items : ['do something']} },
             headers: { 'Content-Type': 'application/json' }
         });
-        fetchMock.getOnce('http://localhost:8000/api/products', {
+        fetchMock.getOnce(`${url}/products`, {
             body: {data: { items: ['do something']   }},
             headers: { 'Content-Type': 'application/json' }
         });
