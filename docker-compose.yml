@@ -13,8 +13,8 @@ services:
      - ./backend/api:/app/api
   db:
     build: ./db
-    ports:
-      - "3306:3306"
+#    ports:
+#      - "3306:3306"
   ui:
     build: ./frontend
     depends_on:
